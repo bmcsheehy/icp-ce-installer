@@ -117,10 +117,10 @@ docker run -e LICENSE=accept -v "$(pwd)":/data ibmcom/icp-inception:2.1.0.2 cp -
 
 if [ ! -f /root/.ssh/id_rsa ]; then
     echo "Generating SSH KEYS"
-    cd /root/.ssh/
-    cat /dev/zero | /usr/bin/ssh-keygen -q -N ""
-    cat id_rsa.pub >> authorized_keys
-    cp id_rsa /opt/ibm-cloud-private-ce-2.1.0.2/cluster/ssh_key
+    cd /root/.ssh/ || exit 1
+    cat /dev/zero | /usr/bin/ssh-keygen -q -N "" || exit 1
+    cat id_rsa.pub >> authorized_keys || exit 1
+    cp id_rsa /opt/ibm-cloud-private-ce-2.1.0.2/cluster/ssh_key || exit 1
 else
     printf "SSH Key configuration \t[ OK ]\n"
 fi
