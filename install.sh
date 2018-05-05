@@ -122,6 +122,7 @@ if [ ! -f /root/.ssh/id_rsa ]; then
     cat id_rsa.pub >> authorized_keys || exit 1
     cp id_rsa /opt/ibm-cloud-private-ce-2.1.0.2/cluster/ssh_key || exit 1
 else
+    cp /root/.ssh/id_rsa /opt/ibm-cloud-private-ce-2.1.0.2/cluster/ssh_key || exit 1
     printf "SSH Key configuration \t[ OK ]\n"
 fi
 
