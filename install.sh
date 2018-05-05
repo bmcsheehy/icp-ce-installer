@@ -137,6 +137,8 @@ IP_ADDR_LISTED=$(grep -c $IP_ADDR /etc/hosts)
 
 if [ $IP_ADDR_LISTED == 0 ]; then
     echo "Configuring /etc/hosts"
+    # remove the entry for 127.0.1.1 as it breaks the docker installer
+    perl -pi -e 's|^127.0.1.1.*$||' /etc/hosts
     printf "$IP_ADDR\t$HOSTNAME\n\n" >> /etc/hosts
 else
     printf "/etc/hosts configuration \t[ OK ]\n"
