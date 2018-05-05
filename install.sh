@@ -1,4 +1,5 @@
 #!/bin/bash
+#
 # Licensed Materials - Property of IBM
 # 5737-E67
 # @ Copyright IBM Corporation 2016, 2018 All Rights Reserved
@@ -7,8 +8,8 @@
 #
 # Author: Brian McSheehy <bmcshee@us.ibm.com>
 # 
-# * This installer is only certified to work with Ubuntu 16.04x 
-# * The recommended minimum configuration for an ICP CE instance is 16 Core x 32 GB RAM x 25 GB Storage
+# * This installer is only certified to work on a single node with Ubuntu 16.04x 
+# * The recommended minimum configuration for a single node ICP CE instance is 16 Core x 32 GB RAM x 25 GB Storage
 
 
 TARGET_OS='Ubuntu 16.04.*'
@@ -168,4 +169,3 @@ EOF
 printf "Running Kubernetes Installer...\n\n"
 cd /opt/ibm-cloud-private-ce-2.1.0.2/cluster/ || exit 1
 docker run -e LICENSE=accept --net=host -t -v "$(pwd)":/installer/cluster ibmcom/icp-inception:2.1.0.2 install
-
