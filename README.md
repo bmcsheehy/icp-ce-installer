@@ -5,8 +5,8 @@ of ICP-CE on a single node virtual server. This environment is intended for deve
 
 ## Requirements
 
-Operating System: Ubuntu 16.04x 
-Virtual Server Specs: 16 Core x 32GB RAM x 25GB Storage
+- Operating System: Ubuntu 16.04x 
+- Virtual Server Specs: 16 Core x 32GB RAM x 25GB Storage
 
 ## Notes
 
@@ -16,4 +16,6 @@ This installer has only been tested with SoftLayer VSI's but should work with an
 
 **Run the following command as root**
 
-### _curl https://raw.githubusercontent.com/bmcsheehy/icp-ce-installer/master/install.sh | bash_
+```
+curl https://raw.githubusercontent.com/bmcsheehy/icp-ce-installer/master/install.sh | bash
+```
