@@ -16,6 +16,6 @@ This installer has only been tested with SoftLayer VSI's but should work with an
 
 - Run the following command as root
 
-```
+```bash
 curl https://raw.githubusercontent.com/bmcsheehy/icp-ce-installer/master/install.sh | bash
 ```
